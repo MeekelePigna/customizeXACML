@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Policy xmlns="urn:oasis:names:tx:cacml:3.0:core:schema:wd-17"
+    PolicyId="policyID1" RuleCombiningAlgId="urn:oasis:names:tc:xacml:1.0:rule-combining-algorithm:first-applicable" Version="1.0">
+    <Description>
+        first policy XACML
+    </Description>
+    <Target>
+    </Target>
+    <Rule RuleId="ruleId" Effect="Permit">
+        <Target>
+            <AnyOf>
+                <AllOf>
+                    <Match>
+                        <Match MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+                            <AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">
+                                http://localhost:88856/echo/posts
+                            </AttributeValue>
+                            <AttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:subject:subject-id" Category="urn:oasis:names:tc:xacml:3.0:attribute-category:subject" DataType="http://www.w3.org/2001/XMLSchema#string"
+        MustBePresent=false
+    />
+                        </Match>
+                    </Match>
+                    <Match>
+                        <Match MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+                            <AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">
+                                read
+                            </AttributeValue>
+                            <AttributeDesignator        AttributeId="urn:oasis:names:tc:xacml:1.0:subject:subject-id"
+        Category="urn:oasis:names:tc:xacml:3.0:attribute-category:subject"
+        DataType="http://www.w3.org/2001/XMLSchema#string"
+        MustBePresent=false
+    />
+                        </Match>
+                    </Match>
+                </AllOf>
+            </AnyOf>
+        </Target>
+        <Condition>
+                <Apply FunctionId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+                <AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">
+                    alice
+                </AttributeValue>
+                <AttributeDesignator        AttributeId="urn:oasis:names:tc:xacml:1.0:undefined:undefined-id"
+        Category="urn:oasis:names:tc:xacml:3.0:attribute-category:undefined"
+        DataType="http://www.w3.org/2001/XMLSchema#string"
+        MustBePresent=false
+    />
+            </Apply>
+        </Condition>
+    </Rule>
+    <Rule RuleId="defaultPolicy" Effect="Permit" />
+</Policy>

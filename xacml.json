@@ -1,0 +1,170 @@
+{
+    "ruleCombiningAlgId":{
+        "1.0": [
+            "first-applicable",
+            "deny-overrides",
+            "permit-overrides"
+        ]
+    },
+    "dataType": [
+        "string",
+        "boolean",
+        "integer",
+        "time",
+        "date",
+        "dateTime",
+        "anyURI",
+        "hexBinary",
+        "base64Binary"
+    ],
+    "function": {       
+        "string": {
+            "1.0": [
+                "string-equal",
+                "string-is-in",
+                "string-intersection",
+                "string-at-least-one-member-of",
+                "string-union",
+                "string-subset",
+
+                "string-greater-than",
+                "string-greater-than-or-equal",
+                "string-less-than",
+                "string-less-than-or-equal"
+            ]
+        },
+        "boolean": {
+            "1.0": [
+                "boolean-equal",
+                "boolean-is-in",
+                "boolean-intersection",
+                "boolean-at-least-one-member-of",
+                "boolean-union",
+                "boolean-subset"
+            ]
+        },
+        "integer": {
+            "1.0": [                
+                "integer-equal",
+                "integer-is-in",
+                "integer-intersection",
+                "integer-at-least-one-member-of",
+                "integer-union",
+                "integer-subset",
+
+                "integer-greater-than",
+                "integer-greater-than-or-equal",
+                "integer-less-than",
+                "integer-less-than-or-equal"            
+            ]
+        },
+        "date": {
+            "1.0": [
+                "date-equal",
+                "date-is-in",
+                "date-intersection",
+                "date-at-least-one-member-of",
+                "date-union",
+                "date-subset",
+
+                "date-greater-than",
+                "date-greater-than-or-equal",
+                "date-less-than",
+                "date-less-than-or-equal"                
+            ]
+        },
+        "time": {
+            "1.0": [
+                "time-equal",
+                "time-is-in",
+                "time-intersection",
+                "time-at-least-one-member-of",
+                "time-union",
+                "time-subset",
+
+                "time-greater-than",
+                "time-greater-than-or-equal",
+                "time-less-than",
+                "time-less-than-or-equal"                
+            ],
+            "2.0": [
+                "time-in-range"
+            ]
+        },
+        "dateTime": {
+            "1.0": [
+                "dateTime-equal",
+                "dateTime-is-in",
+                "dateTime-intersection",
+                "dateTime-at-least-one-member-of",
+                "dateTime-union",
+                "dateTime-subset",
+
+                "dateTime-greater-than",
+                "dateTime-greater-than-or-equal",
+                "dateTime-less-than",
+                "dateTime-less-than-or-equal"
+            ]
+        },
+        "anyURI": {
+            "1.0": [  
+                "anyURI-equal",
+                "anyURI-is-in",
+                "anyURI-intersection",
+                "anyURI-at-least-one-member-of",
+                "anyURI-union",
+                "anyURI-subset"  
+            ]
+        },
+        "hexBinary": {
+            "1.0": [  
+                "hexBinary-equal",
+                "hexBinary-is-in",
+                "hexBinary-intersection",
+                "hexBinary-at-least-one-member-of",
+                "hexBinary-union",
+                "hexBinary-subset"
+            ]
+        },
+        "base64Binary": {
+            "1.0": [  
+                "base64Binary-equal",
+                "base64Binary-is-in",
+                "base64Binary-intersection",
+                "base64Binary-at-least-one-member-of",
+                "base64Binary-union",
+                "base64Binary-subset"    
+            ]
+        }
+    },
+    "attributeId": [
+        "subject",
+        "resource",
+        "action"
+    ],
+    "effect": [
+        "Permit",
+        "Deny"
+    ],
+    "typeInput": {
+        "string": "text",
+        "boolean": "text",
+        "integer": "number",
+        "time": "time",
+        "date": "date",
+        "dateTime": "datetime-local",
+        "anyURI": "text",
+        "hexBinary": "text",
+        "base64Binary": "text"
+    },
+    "singleValueForFunctionWith": [
+        "equal",
+        "greater-than",
+        "greater-than-or-equal",
+        "less-than",
+        "less-than-or-equal"
+    ],
+    "twoValuesForFUnctionWith": [
+        "in-range"
+    ]
+}
